@@ -42,7 +42,7 @@ app.post("/", function (req, res) {
     const options=
     {
         method:"POST",
-        auth:"Ash_Hua:17cdf8817e11474a71180fa432821059-us21"
+        auth:"Ash_Hua:96335e70d42bdf8b9494dbe73acfde1d-us21"
     }
     
     const request= https.request(url,options,(response)=>
@@ -53,8 +53,8 @@ app.post("/", function (req, res) {
             dataInfo=JSON.parse(data);
            console.log(dataInfo);
            console.log(response.statusCode);
-
-           if(response.statusCode===200&&dataInfo.errors==null)
+            console.log(dataInfo.errors);
+           if(response.statusCode===200&&dataInfo.errors.length===0)
            {
                res.sendFile(__dirname+"/success.html");
            }
@@ -78,5 +78,5 @@ app.listen(3000, function () {
     console.log("Sever is running on port 3000");
 });
 
-//17cdf8817e11474a71180fa432821059-us21
+//96335e70d42bdf8b9494dbe73acfde1d-us21
 //693af77346
